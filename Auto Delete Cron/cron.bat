@@ -1,0 +1,1 @@
+SCHTASKS /Create /RU SYSTEM /SC MINUTE /MO 1 /TN "database_delete_task" /TR "C:\wamp\bin\php\php5.5.12\php.exe -f C:\wamp\www\Ghost_Post\delete.php"
