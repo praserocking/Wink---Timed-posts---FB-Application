@@ -1,0 +1,39 @@
+.winkmodalhide
+{
+
+	position: fixed;
+	overflow: auto;
+	margin: 100px;
+	top: 50%;
+	left: 50%;
+	margin-left: -200px;
+	margin-top: -200px;
+	min-height: 400px;
+	min-width: 400px;
+	visibility: hidden;
+	z-index: 1000;
+	border:1px solid #ccc;
+
+}
+.innerwinkmod
+{
+	max-height: 400px;
+	max-width: 400px;
+	min-height: 400px;
+	min-width: 400px;
+
+}
+.modalclosee
+{
+	position: absolute;
+	right: 0px;
+	width: 20px;
+	height: 20px;
+	font-size: 20px;
+	color: #f00;
+
+}
+.modalclosee:hover
+{
+	cursor: pointer;
+}

@@ -1,0 +1,40 @@
+{
+  "name": "Ghost Post",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description" : "Timed posts for Facebook",
+  "icons": { "16": "icons/icon16.png", "48": "icons/icon48.png", "128": "icons/icon128.png" },
+
+  "omnibox": { "keyword" : "yeah" },
+
+  "browser_action": {
+    "default_icon": {
+      "19": "icons/icon19.png",
+      "38": "icons/icon38.png"
+    },
+    "default_title": "Timed Post",
+    "default_popup": "browseraction/popup.html"
+  },
+
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+
+  "chrome_url_overrides" : {
+    "newtab": "newtab/newtab.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["http://www.facebook.com/*", "https://www.facebook.com/*"],
+      "css":["css/modal.css"],
+      "js": ["jquery.js","content.js", "inject.js","communication.js"],
+      "run_at":"document_end"
+    }
+  ],
+  "permissions": ["activeTab","https://localhost/*"],
+  "web_accessible_resources":["icons/timer.png"],
+  "devtools_page": "devtools/devtools.html",
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}
